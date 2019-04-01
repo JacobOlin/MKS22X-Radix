@@ -10,7 +10,7 @@ public class Radix{
     int max = 0;
     for (int i = 0;i < data.length;i += 1) {
       if (Math.abs(data[i]) >= max) {
-        max = data[i];
+        max = Math.abs(data[i]);
       }
     }
     int j = 0;
