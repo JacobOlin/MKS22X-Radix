@@ -5,6 +5,11 @@ public class Radix{
       for (int j = 0;j < buckets.length;j += 1) {
         buckets[j] = new LinkedList<Integer>();
       }
+      for (int j = 0;j < data.length;j += 1) {
+        if (data[j] < 0) {
+          //buckets[9 - ((data[j] / (10**i)) % 10)].add(Math.abs(data[j]));
+        }
+      }
 
     }
   }
