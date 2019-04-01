@@ -1,7 +1,10 @@
 public class Radix{
   public static void radixsort(int[]data) {
-    int[]buckets = new int[20];
+    LinkedList<Integer>[]buckets = new LinkedList[20];
     for (int i = 0;i < getLargest(data);i += 1) {
+      for (int j = 0;j < buckets.length;j += 1) {
+        buckets[j] = new LinkedList<Integer>();
+      }
 
     }
   }
