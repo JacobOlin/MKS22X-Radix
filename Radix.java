@@ -26,6 +26,9 @@ public class Radix{
       }
       l = mergeToLinkedList(buckets);
     }
+    for (int i = 0;i < data.length;i += 1) {
+      data[i] = l.remove(0);
+    }
   }
 
   public static int getLargest(int[] data) {
