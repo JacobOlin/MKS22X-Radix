@@ -1,9 +1,9 @@
 public class Radix{
   public static void radixsort(int[]data) {
     @SuppressWarnings({"uncheked","rawtypes"})
-    LinkedList<Integer>[]buckets = new LinkedList[20];
+    MyLinkedList<Integer>[]buckets = new MyLinkedList[20];
     for (int j = 0;j < buckets.length;j += 1) {
-      buckets[j] = new LinkedList<Integer>();
+      buckets[j] = new MyLinkedList<Integer>();
     }
     for (int j = 0;j < data.length;j += 1) {
       if (data[j] < 0) {
@@ -13,7 +13,7 @@ public class Radix{
         buckets[10 + ((data[j] / (10^0)) % 10)].add(data[j]);
       }
     }
-    LinkedList<Integer> l = mergeToLinkedList(buckets);
+    MyLinkedList<Integer> l = mergeToLinkedList(buckets);
   }
 
   public static int getLargest(int[] data) {
@@ -31,8 +31,8 @@ public class Radix{
     return j;
   }
 
-  public static LinkedList<Integer> mergeToLinkedList(LinkedList<Integer>[] buckets) {
-    LinkedList<Integer> l = new LinkedList<Integer>();
+  public static MyLinkedList<Integer> mergeToLinkedList(MyLinkedList<Integer>[] buckets) {
+    MyLinkedList<Integer> l = new MyLinkedList<Integer>();
     for (int i = 0;i < buckets.length;i += 1) {
       l.extend(buckets[i]);
     }
