@@ -13,6 +13,7 @@ public class Radix{
         buckets[10 + ((data[j] / (10^0)) % 10)].add(data[j]);
       }
     }
+    LinkedList<Integer> l = mergeToLinkedList(buckets);
   }
 
   public static int getLargest(int[] data) {
@@ -28,5 +29,13 @@ public class Radix{
       j += 1;
     }
     return j;
+  }
+
+  public static LinkedList<Integer> mergeToLinkedList(LinkedList<Integer>[] buckets) {
+    LinkedList<Integer> l = new LinkedList<Integer>();
+    for (int i = 0;i < buckets.length;i += 1) {
+      l.extend(buckets[i]);
+    }
+    return l;
   }
 }
