@@ -1,4 +1,4 @@
-public class MyLinkedList <E>{
+public class MyLinkedList<E>{
   private int size;
   private Node start,end;
 
@@ -135,6 +135,7 @@ public class MyLinkedList <E>{
       start = getNthNode(1);
       start.setPrev(null);
       size -= 1;
+      return answer;
     }
     if (index != 0 && index != size() - 1) {
       Node m = getNthNode(index - 1);
