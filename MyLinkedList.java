@@ -132,8 +132,10 @@ public class MyLinkedList<E>{
     E answer = start.getData();
     if (index == 0) {
       answer = start.getData();
-      start = getNthNode(1);
-      start.setPrev(null);
+      if (size() > 1) {
+        start = getNthNode(1);
+        start.setPrev(null);
+      }
       size -= 1;
       return answer;
     }
