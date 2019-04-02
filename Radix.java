@@ -14,6 +14,18 @@ public class Radix{
       }
     }
     MyLinkedList<Integer> l = mergeToLinkedList(buckets);
+    for (int i = 1;i < getLargest(data);i += 1) {
+      while (l.size() > 0) {
+        Integer k = l.remove(0);
+        if (k < 0) {
+          buckets[9 - ((Math.abs(k) / (10^i)) % 10)].add(k);
+        }
+        else {
+          buckets[10 + ((Math.abs(k) / (10^i)) % 10)].add(k);
+        }
+      }
+      l = mergeToLinkedList(buckets);
+    }
   }
 
   public static int getLargest(int[] data) {
