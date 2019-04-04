@@ -7,10 +7,10 @@ public class Radix{
     }
     for (int j = 0;j < data.length;j += 1) {
       if (data[j] < 0) {
-        buckets[9 - ((data[j] / (int)Math.pow(10,0)) % 10)].add(data[j]);
+        buckets[9 - ((Math.abs(data[j]) / (int)Math.pow(10,0)) % 10)].add(data[j]);
       }
       else {
-        buckets[10 + ((data[j] / (int)Math.pow(10,0)) % 10)].add(data[j]);
+        buckets[10 + ((Math.abs(data[j]) / (int)Math.pow(10,0)) % 10)].add(data[j]);
       }
     }
     /*for (int i = 0;i < buckets.length;i += 1) {
