@@ -1,6 +1,6 @@
 public class Radix{
   public static void radixsort(int[]data) {
-    @SuppressWarnings({"uncheked","rawtypes"})
+    @SuppressWarnings({"unchecked","rawtypes"})
     MyLinkedList<Integer>[]buckets = new MyLinkedList[20];
     for (int j = 0;j < buckets.length;j += 1) {
       buckets[j] = new MyLinkedList<Integer>();
