@@ -7,22 +7,28 @@ public class Radix{
     }
     for (int j = 0;j < data.length;j += 1) {
       if (data[j] < 0) {
-        buckets[9 - ((data[j] / (10^0)) % 10)].add(data[j]);
+        buckets[9 - ((data[j] / (int)Math.pow(10,0)) % 10)].add(data[j]);
       }
       else {
-        buckets[10 + ((data[j] / (10^0)) % 10)].add(data[j]);
+        buckets[10 + ((data[j] / (int)Math.pow(10,0)) % 10)].add(data[j]);
       }
     }
+    /*for (int i = 0;i < buckets.length;i += 1) {
+      if (buckets[i].size() > 0) {
+        System.out.print(i);
+      }
+    }
+    System.out.println();*/
     MyLinkedList<Integer> l = mergeToLinkedList(buckets);
     for (int i = 1;i < getLargest(data);i += 1) {
       while (l.size() > 0) {
         //System.out.println(l.size() + " " + l.get(0));
         Integer k = l.remove(0);
         if (k < 0) {
-          buckets[9 - ((Math.abs(k) / (10^i)) % 10)].add(k);
+          buckets[9 - ((Math.abs(k) / (int)Math.pow(10,i)) % 10)].add(k);
         }
         else {
-          buckets[10 + ((Math.abs(k) / (10^i)) % 10)].add(k);
+          buckets[10 + ((Math.abs(k) / (int)Math.pow(10,i)) % 10)].add(k);
         }
       }
       l = mergeToLinkedList(buckets);
